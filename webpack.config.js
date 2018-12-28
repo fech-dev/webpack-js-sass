@@ -24,12 +24,17 @@ module.exports = {
             },
 
             {
-                test: /\.(jpg|jpeg|png|gif|ico)$/,
-                loader: 'file-loader',
-                options:{
-                    name: '[name].[ext]',
-                    outputPath: 'images'
-                }
+                test: /\.(jpg|jpeg|png|gif|ico|svg)$/,
+                loaders: [
+                    {
+                        loader:'file-loader',
+                        options:{
+                            name: '[name].[ext]',
+                            outputPath: 'images'
+                        }
+                    },
+                   'img-loader'
+                ]
             },
 
             {
